@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Manage Inputs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item cursor-pointer">
+                <a class="nav-link" href="../home/home.html">Home</a>
+            </li>
+            <li class="nav-item cursor-pointer">
+                <a class="nav-link" href="../filters/filter.html">Manage Filters</a>
+            </li>
+            <li class="nav-item cursor-pointer">
+                <a class="nav-link" href="../table/table.html">Manage Table</a>
+            </li>
+            <li class="nav-item cursor-pointer">
+                <a class="nav-link active">Manage Inputs</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mx-auto">
+        <h1 class="text-center text-4xl text-indigo-400 mb-4">Manage Inputs</h1>
+        <div class="d-flex mb-3">
+            <input type="text" class="form-control me-2" placeholder="Property Key" id="InputPropertyKey">
+            <input type="text" class="form-control me-2" placeholder="Body Id" id="InputBodyId">
+            <input type="text" class="form-control me-2" placeholder="Place Holder" id="InputPlaceHolder">
+            <input type="text" class="form-control me-2" placeholder="Validation Id" id="InputValidationId">
+            <input type="text" class="form-control me-2" placeholder="Display Order" id="InputDisplayOrder">
+            <label for="InputIsVisible" style="margin-top: 5px;margin-right: 7px;">IsVisible</label>
+            <input type="checkbox" class="me-2" id="InputIsVisible">
+            <label for="InputIsRequired" style="margin-top: 5px;margin-right: 7px;">IsRequired</label>
+            <input type="checkbox" class="me-2" id="InputIsRequired">
+
+            <button class="btn btn-primary" onclick="AddNewInput()" id="btnAddInput">Add</button>
+            <button class="btn btn-success" onclick="SaveUpdateInput()" id="btnUpdateInput">Update</button>
+        </div>
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">Property Key
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">Body Id
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">Place Holder
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">Validation Id
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">Display Order
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">IsVisible
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">IsRequired
+                    </th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase  tracking-wider">Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="tbody"></tbody>
+        </table>
+    </div>
+    <script src="input.js"></script>
+    
+</body>
+</html>

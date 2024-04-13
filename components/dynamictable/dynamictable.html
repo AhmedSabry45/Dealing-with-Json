@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dynamictable.css">
+    <title>Dynamic Table</title>
+</head>
+
+<body>
+    <h1 class="text-center text-danger">Create Dynamic Table</h1>
+    <div class="p-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="d-flex">
+                            <label style="width: 80px;margin-top: 6px;">Api URL</label>
+                            <input type="text" class="form-control" placeholder="Api URL" id="ApiInput">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" onclick="LoadApiData()">Get</button>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="d-flex">
+                            <label style="width: 100px;margin-top: 6px;">Post Data</label>
+                            <input type="text" class="form-control" placeholder="Post Data" id="PostInput">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" onclick="PostData()">Post</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="p-4">
+        <div class="d-flex mb-2">
+            <label style="margin-right: 10px;margin-top: 5px;" id="HeaderKeyLbl" hidden>Convert Header Key</label>
+            <input type="text" class="form-control w-25 me-2" placeholder="Header Key" id="HeaderKeyInput" oninput="HeaderKeyWriter(this.value)" hidden>
+            <button class="btn btn-primary" id="btnSaveHeader" onclick="SaveNewHeader()" hidden>Save</button>
+        </div>
+        <button class="btn btn-success mb-2" id="btnConvert" onclick="ConvertToNewArry()" hidden>Convert</button>
+        <table class="table table-bordered table-responsive" id="convertTable">
+            <thead class="table-dark" id="thead"></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <table class="table table-bordered table-responsive" id="newTable" hidden>
+            <thead class="table-dark" id="newthead"></thead>
+            <tbody id="newtbody"></tbody>
+          </table>
+    </div>
+
+    <script src="dynamictable.js"></script>
+</body>
+</html>
